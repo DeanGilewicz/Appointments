@@ -6,12 +6,12 @@
   ['$scope', '$http', '$location', 'appUrl', function ($scope, $http, $location, appUrl) {
 
     $http.get(appUrl).success( function (results){
-      console.log(results);
+
       $scope.appointments = results;
+      console.log(results);
     });
 
     $scope.viewMore = function (appointment) {
-      console.log(appointment);
       $location.path('/single/' + appointment.aid);
     };
 

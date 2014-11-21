@@ -3,7 +3,7 @@
   angular.module('AppointmentList', ['ngRoute'])
 
   .constant ({
-    'appUrl': 'http://tiy-atl-fe-server.herokuapp.com/collections/appointments/'
+    'appUrl': 'http://tiy-atl-fe-server.herokuapp.com/collections/appointments1/'
   })
 
   .config( function ($routeProvider){

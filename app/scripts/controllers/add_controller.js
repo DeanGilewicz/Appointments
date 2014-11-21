@@ -6,9 +6,8 @@
 
     $scope.appointment = {};
 
-    $scope.addAppointment = function () {
-
-      $http.post(appUrl, $scope.appointment).success( function (data) {
+    $scope.addAppointment = function (app) {
+      $http.post(appUrl, app).success( function () {
         $location.path('/');
       });
 
