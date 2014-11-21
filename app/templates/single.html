@@ -11,6 +11,8 @@
   <input type="date" ng-model="app.date" placeholder="When?" /><br/><br/>
   <input type="time" ng-model="app.time" placeholder="Time?" /><br/><br/>
 
-  <button>Update</button>
+
 
 </form>
+<a class="updateBtn" ng-click="editAppointment(app)">Update</a>
+<a class="deleteBtn" ng-click="deleteAppointment(app)">Delete</a>

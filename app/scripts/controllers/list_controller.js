@@ -5,8 +5,7 @@
   .controller('ListController',
   ['$scope', '$http', '$location', 'appUrl', function ($scope, $http, $location, appUrl) {
 
-    $http.get(appUrl).success( function (results){
-
+    appFactory.getAppointments().success( function (results){
       $scope.appointments = results;
       console.log(results);
     });
@@ -16,6 +15,15 @@
       $location.path('/single/' + appointment._id);
       console.log(appointment._id);
     };
+
+    $scope.addAppointment = function (appointment) {
+      appFactory.addAppointment(appointment);
+      $rootScope.$on('app:added', function() {
+        $location.path('/');
+      });
+    }
+
+
 
 
   }]);
