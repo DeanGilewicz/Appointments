@@ -7,11 +7,11 @@
 
     $http.get(appUrl).success( function (results){
       console.log(results);
-      $scope.people = results;
+      $scope.appointments = results;
     });
 
     $scope.viewMore = function (appointment) {
-      console.log(person);
+      console.log(appointment);
       $location.path('/single/' + appointment._id);
     };
 
