@@ -1,1 +1,16 @@
-<p>Single Template</p>
+<!-- <p>{{ app.name }}</p>
+<p>{{ app.location }}</p>
+<p>{{ app.date }}</p>
+<p>{{ app.time }}</p> -->
+
+
+<form ng-submit="updateAppointment(app)"><br/>
+
+  <input type="text" ng-model="app.name" placeholder="Who With?" /><br/><br/>
+  <input type="text" ng-model="app.location" placeholder="Where?" /><br/><br/>
+  <input type="date" ng-model="app.date" placeholder="When?" /><br/><br/>
+  <input type="time" ng-model="app.time" placeholder="Time?" /><br/><br/>
+
+  <button>Update</button>
+
+</form>

@@ -8,10 +8,13 @@
     $http.get(appUrl).success( function (results){
 
       $scope.appointments = results;
+      console.log(results);
     });
 
-    $scope.viewMore = function (appointment) {
-      $location.path('/single/' + appointment.aid);
+    $scope.viewSingle = function (appointment) {
+      console.log(appointment);
+      $location.path('/single/' + appointment._id);
+      console.log(appointment._id);
     };
 
 

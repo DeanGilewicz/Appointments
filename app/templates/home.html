@@ -1,5 +1,6 @@
 <ul>
-  <li ng-repeat="app in appointments">
-    <click-appointment>Meeting with {{ app.name }} at {{ app.location }} on {{ app.date }} at {{ app.time }}</click-appointment>
+  <li ng-repeat="app in appointments" ng-click="viewSingle(app)">
+    <a href="#/single/{{app._id}}">Meeting with {{ app.name }} at {{ app.location }} on {{ app.date }} at {{ app.time }}</a>
+    <click-appointment>Directive Click</click-appointment>
   </li>
 </ul>
