@@ -1,6 +1,6 @@
 (function () {
 
-  angular.module('AppontmentList')
+  angular.module('AppointmentList')
   .controller('AddController',
   ['$scope', '$http', '$location', 'appUrl', function ($scope, $http, $location, appUrl) {
 

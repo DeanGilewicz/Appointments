@@ -1,6 +1,6 @@
 (function (){
 
-  angular.module('AppontmentList')
+  angular.module('AppointmentList')
 
   .controller('OtherController', [ function () {
 

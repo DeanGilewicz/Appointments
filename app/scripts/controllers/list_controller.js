@@ -1,6 +1,6 @@
 (function (){
 
-  angular.module('AppontmentList')
+  angular.module('AppointmentList')
 
   .controller('ListController',
   ['$scope', '$http', '$location', 'appUrl', function ($scope, $http, $location, appUrl) {
@@ -12,7 +12,7 @@
 
     $scope.viewMore = function (appointment) {
       console.log(appointment);
-      $location.path('/single/' + appointment._id);
+      $location.path('/single/' + appointment.aid);
     };
 
 
