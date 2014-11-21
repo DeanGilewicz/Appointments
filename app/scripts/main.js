@@ -28,6 +28,17 @@
       controller: 'OtherController'
     });
 
+  })
+
+  .directive('clickAppointment', function () {
+    return {
+      link: function ($scope, element, attrs) {
+        element.bind('click', function () {
+          console.log('my appointment directive was run');
+        });
+      }
+    }
   });
+
 
 }());

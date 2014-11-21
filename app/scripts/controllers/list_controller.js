@@ -8,7 +8,6 @@
     $http.get(appUrl).success( function (results){
 
       $scope.appointments = results;
-      console.log(results);
     });
 
     $scope.viewMore = function (appointment) {
