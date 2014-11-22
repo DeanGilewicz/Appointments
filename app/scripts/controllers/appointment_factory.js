@@ -1,7 +1,7 @@
 (function () {
 
   angular.module('AppointmentList')
-  .factory('appFactory', ['$rootScope', '$http', function ($rootScope, $http) {
+  .factory('appFactory', ['$rootScope', '$http', function (appFactory, $rootScope, $http) {
 
     var appUrl = 'http://tiy-atl-fe-server.herokuapp.com/collections/appointments1/';
 
@@ -9,18 +9,18 @@
       return $http.get(appUrl);
     }
 
-    function getAppointment (id) {
-      return $http.get(appUrl + id);
+    function getAppointment (aid) {
+      return $http.get(appUrl + aid);
     }
 
     function addAppointment (app) {
-      return $http.post(appUrl, app).then( function () {
+      return $http.post(appUrl, app).success( function () {
         $rootScope.$broadcast('app:added');
       });
     }
 
     function editAppointment (app) {
-      return $http.post(appUrl + app._id, app).then( function () {
+      return $http.post(appUrl + app._id, app).success( function () {
         $rootScope.$broadcast('app:edited');
       });
     }

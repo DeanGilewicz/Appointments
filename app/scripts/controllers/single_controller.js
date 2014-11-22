@@ -2,24 +2,23 @@
 
   angular.module('AppointmentList')
   .controller('SingleController',
-  ['$scope', '$routeParams', '$http', 'appUrl', function ($scope, $routeParams, $http, appUrl) {
+  ['appFactory', '$scope', '$routeParams', '$location', function (appFactory, $scope, $routeParams, $location) {
 
-    appFactory.get($routeParams.id).success( function (data) {
+    appFactory.get($routeParams.aid).success( function (data) {
       $scope.app = data;
       $scope.app.date = new Date(data.date);
       $scope.app.time = new Date(data.time);
-      console.log(data);
     });
 
     $scope.editAppointment = function(app) {
-      .appFactory.editAppointment(app);
-      $rootScope.$on('app:edited'), funcion () {
-        $location.path('/');
-      });
+      appFactory.editAppointment(app);
+      // $rootScope.$on('app:edited'), function () {
+      $location.path('/');
+      // };
     }
 
     $scope.deleteAppointment = function(app) {
-      .appFactory.deleteAppointment(app);
+      appFactory.deleteAppointment(app);
       $location.path('/');
     }
 

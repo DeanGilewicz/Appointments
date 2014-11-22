@@ -3,28 +3,22 @@
   angular.module('AppointmentList')
 
   .controller('ListController',
-  ['$scope', '$http', '$location', 'appUrl', function ($scope, $http, $location, appUrl) {
+  ['appFactory', '$scope', '$location', 'appUrl', function (appFactory, $scope, $location, appUrl) {
 
-    appFactory.getAppointments().success( function (results){
+    appFactory.getAppointments().success( function (results) {
       $scope.appointments = results;
-      console.log(results);
     });
 
-    $scope.viewSingle = function (appointment) {
-      console.log(appointment);
-      $location.path('/single/' + appointment._id);
-      console.log(appointment._id);
-    };
+    // $scope.viewSingle = function (appointment) {
+    //   $location.path('/single/' + appointment._id);
+    // };
 
     $scope.addAppointment = function (appointment) {
       appFactory.addAppointment(appointment);
-      $rootScope.$on('app:added', function() {
+      // $rootScope.$on('app:added', function() {
         $location.path('/');
-      });
+      // });
     }
-
-
-
 
   }]);
 
