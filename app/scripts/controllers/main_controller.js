@@ -2,21 +2,18 @@
   angular
     .module('ApptList')
     .controller('MainCtrl',
-      ['$scope', '$location',
-        function($scope, $location) {
-          appFactory.getAppointments().success( function (results) {
-            $scope.appointments = results;
+      ['apptFactory', '$scope', '$location', '$rootScope',
+        function(apptFactory, $scope, $location, $rootScope) {
+          apptFactory.getAppts().then( function (results) {
+            $scope.appts = results;
           });
 
-          // $scope.viewSingle = function (appointment) {
-          //   $location.path('/single/' + appointment._id);
-          // };
-
-          $scope.addAppointment = function (appointment) {
-            appFactory.addAppointment(appointment);
-            // $rootScope.$on('app:added', function() {
+          $scope.addAppt = function (appt) {
+            apptFactory.addAppt(appt);
+            $rootScope.$on('appt:added', function(){
               $location.path('/');
-            // });
+            });
+
           }
 
     }]);
