@@ -1,8 +1,8 @@
 (function (){
 
-  angular.module('AppointmentList')
-  .controller('OtherController', [ function () {
-
-  }]);
+  // angular.module('AppointmentList')
+  // .controller('OtherController', [ function () {
+  //
+  // }]);
 
 }());
