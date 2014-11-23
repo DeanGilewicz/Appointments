@@ -2,23 +2,12 @@
   angular
     .module('ApptList')
     .controller('MainCtrl',
-      ['apptFactory', '$scope', '$location', '$rootScope',
-        function(apptFactory, $scope, $location, $rootScope) {
+      ['apptFactory', '$scope',
+        function(apptFactory, $scope) {
 
           apptFactory.getAppts().then( function (results) {
             $scope.appts = results;
           });
-
-          $scope.addAppt = function (appt) {
-            apptFactory.addAppt(appt);
-            $rootScope.$on('appt:added', function() {
-              $location.path('/');
-            });
-          }
-
-          // $scope.viewSingle = function (appt) {
-          //   $location.path('/single/' + appt._id);
-          // }
 
     }]);
 
