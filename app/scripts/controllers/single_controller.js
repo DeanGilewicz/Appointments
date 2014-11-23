@@ -12,9 +12,7 @@
 
     $scope.editAppointment = function(app) {
       appFactory.editAppointment(app);
-      // $rootScope.$on('app:edited'), function () {
       $location.path('/');
-      // };
     }
 
     $scope.deleteAppointment = function(app) {

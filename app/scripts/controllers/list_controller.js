@@ -1,9 +1,9 @@
 (function (){
 
   angular.module('AppointmentList')
-
   .controller('ListController',
-  ['appFactory', '$scope', '$location', 'appUrl', function (appFactory, $scope, $location, appUrl) {
+  ['appFactory', '$scope', '$location', 'appUrl',
+  function (appFactory, $scope, $location, appUrl) {
 
     appFactory.getAppointments().success( function (results) {
       $scope.appointments = results;

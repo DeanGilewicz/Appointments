@@ -2,7 +2,7 @@
 
   angular.module('AppointmentList', ['ngRoute'])
 
-  .config( function ($routeProvider){
+  .config( function ($routeProvider) {
 
     $routeProvider.when('/', {
       templateUrl: 'templates/home.html',
@@ -22,19 +22,19 @@
     $routeProvider.otherwise({
       templateUrl: 'templates/other.html',
       controller: 'OtherController'
-    });
+    })
 
-  })
-
-  .directive('clickAppointment', function () {
-    return {
-      link: function ($scope, element, attrs) {
-        element.bind('click', function () {
-          console.log('my appointment directive was run');
-        });
-      }
-    }
   });
+
+  // .directive('clickAppointment', function () {
+  //   return {
+  //     link: function ($scope, element, attrs) {
+  //       element.bind('click', function () {
+  //         console.log('my appointment directive was run');
+  //       });
+  //     }
+  //   }
+  // });
 
 
 }());

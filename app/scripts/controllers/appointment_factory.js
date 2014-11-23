@@ -1,7 +1,7 @@
 (function () {
 
   angular.module('AppointmentList')
-  .factory('appFactory', ['$rootScope', '$http', function (appFactory, $rootScope, $http) {
+  .factory('appFactory', ['$rootScope', '$http', '$broadcast', function (appFactory, $broadcast, $rootScope, $http) {
 
     var appUrl = 'http://tiy-atl-fe-server.herokuapp.com/collections/appointments1/';
 
@@ -27,7 +27,7 @@
 
     function deleteAppointment (app) {
       return $http.delete(appUrl + app._id, app);
-    };
+    }
 
     return {
 
@@ -36,7 +36,7 @@
       addAppointment: addAppointment,
       editAppointment: editAppointment,
       deleteAppointment: deleteAppointment
-    };
+    }
 
   }]);
 
