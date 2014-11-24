@@ -7,8 +7,8 @@
 
         apptFactory.get($routeParams.apptId).then( function (data) {
           $scope.appt = data;
-          $scope.appt.date = new Date(data.date);
-          $scope.appt.time = new Date(data.time);
+          // $scope.appt.date = new Date(data.date);
+          // $scope.appt.time = new Date(data.time);
         });
 
         $scope.editAppt = function(appt) {

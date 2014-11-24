@@ -4,8 +4,7 @@
     .constant({
       'apptUrl': 'http://tiy-atl-fe-server.herokuapp.com/collections/appointments1/'
     })
-    .config(['$routeProvider',
-      function($routeProvider) {
+    .config(function($routeProvider) {
         $routeProvider
           .when('/', {
             templateUrl: 'templates/main.html',
@@ -22,7 +21,7 @@
           .otherwise({
             redirectTo: '/'
           });
-    }]);
+    });
 
     // .directive('crossOut', [function () {
     //   return {

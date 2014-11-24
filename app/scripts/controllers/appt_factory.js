@@ -22,15 +22,16 @@
           }
           // edit a appt
           function editAppt (appt) {
-            return $http.post(apptUrl + appt._id, appt).success( function () {
+            return $http.put(apptUrl + appt._id, appt).success( function () {
               // broadcast to the parent controller that the appt has been edited/updated
               $rootScope.$broadcast('appt:edited');
             });
           }
 
           function deleteAppt (appt) {
-            return $http.delete(apptUrl + appt._id, appt);
-            $rootScope.$broadcast('appt:deleted');
+            return $http.delete(apptUrl + appt._id, appt).success( function (){
+              $rootScope.$broadcast('appt:deleted');
+            });
           }
 
           return {

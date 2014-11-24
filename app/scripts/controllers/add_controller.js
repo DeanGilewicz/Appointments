@@ -2,8 +2,8 @@
   angular
     .module('ApptList')
     .controller('AddCtrl',
-      ['appFactory', '$scope', '$rootScope', '$location',
-        function (appFactory, $scope, $rootScope, $location) {
+      ['apptFactory', '$scope', '$rootScope', '$location',
+        function (apptFactory, $scope, $rootScope, $location) {
 
           $scope.addAppt = function (appt) {
             appFactory.addAppt(appt);
