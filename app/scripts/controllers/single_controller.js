@@ -18,10 +18,12 @@
           });
         }
 
-        // $scope.deleteAppt = function(app) {
-        //   appFactory.deleteAppointment(app);
-        //   $location.path('/');
-        // }
+        $scope.deleteAppt = function(appt) {
+          apptFactory.deleteAppt(appt);
+          $rootScope.$on('appt:deleted', function () {
+            $location.path('/');
+          });
+        }
 
       }]);
 
