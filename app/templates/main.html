@@ -1,7 +1,13 @@
 <p>Search: <input ng-model="query"></p>
+<select ng-model="orderProp">
+  <option value="">Sort By</option>
+  <option value="name">Name</option>
+  <option value="date">Most Recent</option>
+  <option value="location">Location</option>
+</select>
 
 <ul>
-  <li ng-repeat="appt in appts | filter: query">
+  <li ng-repeat="appt in appts | filter: query | orderBy: orderProp">
     <p>Meeting with {{ appt.name }} at {{ appt.location }} on {{ appt.date | date: 'MMM-dd-yyyy' }} at {{ appt.time | date: 'mediumTime' }}</p>
     <a href="#/single/{{ appt._id }}"><button>Edit</button></a>
   </li>
