@@ -5,7 +5,7 @@
       ['apptFactory', '$scope',
         function(apptFactory, $scope) {
 
-          apptFactory.getAppts().success( function (results) {
+          apptFactory.getAppts().then( function (results) {
             $scope.appts = results;
           });
 

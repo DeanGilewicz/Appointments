@@ -10,7 +10,7 @@
 
           // retrieves data from server
           function getAppts () {
-            return allAppts.get();
+            return allAppts.getList();
           }
           // retrieves a single appt from the server based on id
           function getAppt (id) {
@@ -44,7 +44,7 @@
             addAppt: addAppt,
             editAppt: editAppt,
             deleteAppt: deleteAppt
-            
+
           };
 
     }]);

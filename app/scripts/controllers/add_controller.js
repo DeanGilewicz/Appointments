@@ -6,7 +6,7 @@
         function (apptFactory, $scope, $rootScope, $location) {
 
           $scope.addAppt = function (appt) {
-            appFactory.addAppt(appt);
+            apptFactory.addAppt(appt);
             $rootScope.$on('appt:added', function () {
               $location.path('/');
             });
