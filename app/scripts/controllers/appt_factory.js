@@ -24,7 +24,7 @@
           function editAppt (appt) {
             return $http.post(apptUrl + app._id, appt).success( function () {
               // broadcast to the parent controller that the appt has been edited/updated
-              $rootScope.$broadcast('app:edited');
+              $rootScope.$broadcast('appt:edited');
             });
           }
 
