@@ -1,5 +1,8 @@
+<p>Search: <input ng-model="query"></p>
+
 <ul>
-  <li ng-repeat="appt in appts">
-    <a href="#/single/{{ appt._id }}">Meeting with {{ appt.name }} at {{ appt.location }} on {{ appt.date | date: 'MMM-dd-yyyy' }} at {{ appt.time | date: 'mediumTime' }}</a>
+  <li ng-repeat="appt in appts | filter: query">
+    <p>Meeting with {{ appt.name }} at {{ appt.location }} on {{ appt.date | date: 'MMM-dd-yyyy' }} at {{ appt.time | date: 'mediumTime' }}</p>
+    <a href="#/single/{{ appt._id }}"><button>Edit</button></a>
   </li>
 </ul>
