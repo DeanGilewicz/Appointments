@@ -3,7 +3,7 @@
     .module('ApptList')
     .factory('apptFactory',
       ['$rootScope', '$http', 'apptUrl', '$broadcast',
-        function( $rootScope, $http, apptUrl, $broadcast) {
+        function($rootScope, $http, apptUrl, $broadcast) {
 
           // retrieves data from server
           function getAppts () {
@@ -29,7 +29,7 @@
           }
 
           function deleteAppt (appt) {
-            return $http.delete(apptUrl + appt._id, appt).success( function (){
+            return $http.delete(apptUrl + appt._id, appt).success( function () {
               $rootScope.$broadcast('appt:deleted');
             });
           }
@@ -41,7 +41,7 @@
             addAppt: addAppt,
             editAppt: editAppt,
             deleteAppt: deleteAppt
-          }
+          };
 
     }]);
 
