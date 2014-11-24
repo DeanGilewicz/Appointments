@@ -1,9 +1,9 @@
 <form><br/>
 
-  <input type="text" ng-model="appt.name" placeholder="{{appt.name}}" /><br/><br/>
-  <input type="text" ng-model="appt.location" placeholder="{{appt.location}}" /><br/><br/>
-  <input type="date" ng-model="appt.date" placeholder="{{appt.date}}" /><br/><br/>
-  <input type="time" ng-model="appt.time" placeholder="{{appt.time}}" /><br/><br/>
+  <input type="text" ng-model="appt.name" placeholder="{{ appt.name }}" /><br/><br/>
+  <input type="text" ng-model="appt.location" placeholder="{{ appt.location }}" /><br/><br/>
+  <input type="date" ng-model="appt.date" placeholder="{{ appt.date }}" /><br/><br/>
+  <input type="time" ng-model="appt.time" placeholder="{{ appt.time }}" /><br/><br/>
 
   <button ng-click="editAppt(appt)">Update</button>
   <button ng-click="deleteAppt(appt)">Delete</button>
