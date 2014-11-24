@@ -5,7 +5,7 @@
   <input type="date" ng-model="appt.date" placeholder="{{appt.date}}" /><br/><br/>
   <input type="time" ng-model="appt.time" placeholder="{{appt.time}}" /><br/><br/>
 
-</form>
+  <button ng-click="editAppt(appt)">Update</button>
+  <button ng-click="deleteAppt(appt)">Delete</button>
 
-<a class="updateBtn" ng-click="editAppointment(app)">Update</a>
-<a class="deleteBtn" ng-click="deleteAppointment(app)">Delete</a>
+</form>
