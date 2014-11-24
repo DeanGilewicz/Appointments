@@ -1,26 +1,32 @@
 (function () {
-  angular
-    .module('ApptList', ['ngRoute'])
-    .constant({
-      'apptUrl': 'http://tiy-atl-fe-server.herokuapp.com/collections/appointments1/'
-    })
-    .config(function($routeProvider) {
-        $routeProvider
-          .when('/', {
-            templateUrl: 'templates/main.html',
-            controller: 'MainCtrl'
-          })
-          .when('/add', {
-            templateUrl: 'templates/add.html',
-            controller: 'AddCtrl'
-          })
-          .when('/single/:apptId', {
-            templateUrl: 'templates/single.html',
-            controller: 'SingleCtrl'
-          })
-          .otherwise({
-            redirectTo: '/'
-          });
+
+  var app = angular.module('ApptList', ['ngRoute', 'restangular']);
+
+  app.config(function($routeProvider, RestangularProvider) {
+
+    RestangularProvider.setBaseUrl('http://tiy-atl-fe-server.herokuapp.com/collections/');
+    RestangularProvider.setRestangularFields({
+      id: '_id'
+    });
+
+      $routeProvider.when('/', {
+        templateUrl: 'templates/main.html',
+        controller: 'MainCtrl'
+      });
+
+      $routeProvider.when('/add', {
+        templateUrl: 'templates/add.html',
+        controller: 'AddCtrl'
+      });
+
+      $routeProvider.when('/single/:id', {
+        templateUrl: 'templates/single.html',
+        controller: 'SingleCtrl'
+      });
+
+      $routeProvider.otherwise({
+        redirectTo: '/'
+      });
     });
 
     // .directive('crossOut', [function () {

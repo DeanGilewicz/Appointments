@@ -2,34 +2,37 @@
   angular
     .module('ApptList')
     .factory('apptFactory',
-      ['$rootScope', '$http', 'apptUrl', '$broadcast',
-        function($rootScope, $http, apptUrl, $broadcast) {
+      ['$rootScope', 'Restangular',
+        function($rootScope, Restangular) {
+
+          //defines the endpoint where Restangular gets the data - url defined in app.config with Restangular provider
+          var allAppts = Restangular.all('appointments1');
 
           // retrieves data from server
           function getAppts () {
-            return $http.get(apptUrl);
+            return allAppts.get();
           }
           // retrieves a single appt from the server based on id
           function getAppt (id) {
-            return $http.get(apptUrl + id);
+            return allAppts.get(id);
           }
           // add a appt
           function addAppt (appt) {
-            return $http.post(apptUrl, appt).success( function () {
+            allAppts.post(appt).then( function () {
               // broadcast to the parent controller that the appt has been added
               $rootScope.$broadcast('appt:added');
             });
           }
           // edit a appt
           function editAppt (appt) {
-            return $http.put(apptUrl + appt._id, appt).success( function () {
+            appt.put().then( function () {
               // broadcast to the parent controller that the appt has been edited/updated
               $rootScope.$broadcast('appt:edited');
             });
           }
 
           function deleteAppt (appt) {
-            return $http.delete(apptUrl + appt._id, appt).success( function () {
+            appt.remove().then( function () {
               $rootScope.$broadcast('appt:deleted');
             });
           }
@@ -41,6 +44,7 @@
             addAppt: addAppt,
             editAppt: editAppt,
             deleteAppt: deleteAppt
+            
           };
 
     }]);

@@ -5,8 +5,12 @@
       ['apptFactory', '$scope',
         function(apptFactory, $scope) {
 
-          apptFactory.getAppts().then( function (results) {
+          apptFactory.getAppts().success( function (results) {
             $scope.appts = results;
+            // console.log(results);
+            // $scope.appts.date = new Date(results.date);
+            // console.log($scope.appts.date);
+            // $scope.appts.time = new Date(results.time);
           });
 
     }]);
