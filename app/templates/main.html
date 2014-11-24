@@ -1,5 +1,5 @@
 <ul>
   <li ng-repeat="appt in appts">
-    <a href="#/single/{{ appt._id }}">Meeting with {{ appt.name }} at {{ appt.location }} on {{ appt.date }} at {{ appt.time }}</a>
+    <a href="#/single/{{ appt._id }}">Meeting with {{ appt.name }} at {{ appt.location }} on {{ appt.date | date: 'MMM-dd-yyyy' }} at {{ appt.time | date: 'mediumTime' }}</a>
   </li>
 </ul>
