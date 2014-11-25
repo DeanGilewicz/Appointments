@@ -65,3 +65,20 @@ li {
   color: white;
   font-size: 12px;
 }
+
+.updateForm {
+  text-align: center;
+  .timeInput {
+    width: 190px;
+  }
+  button {
+    margin: 10px 20px 0px 20px;
+  }
+}
+
+.addForm {
+  text-align: center;
+  .timeInput {
+    width: 190px;
+  }
+}
