@@ -18,9 +18,50 @@ body {
   background-color: #eee;
   border-radius: 6px;
   padding: 60px;
+  .header {
+    overflow: auto;
+    background-color: HSLA(211, 9%, 49%, 1);
+  }
+  .home {
+    float: left;
+    text-decoration: none;
+    color: white;
+    padding-left: 50px;
+  }
+  .add {
+    float: right;
+    text-decoration: none;
+    color: white;
+    padding-right: 50px;
+  }
   h1 {
     font-size: 60px;
+    text-align: center;
     line-height: 1;
     letter-spacing: -1px;
   }
+}
+
+.search {
+  float: left;
+  margin: 0px 0px 40px 0px;
+}
+.filter {
+  float: right;
+  margin: 0px 0px 20px 0px;
+}
+
+li {
+  clear: both;
+  padding-bottom: 40px;
+  border-bottom: 1px solid HSLA(211, 9%, 49%, 1);
+}
+
+.editBtn {
+  float: right;
+  margin: 0px;
+  padding: 0px 30px 0px 30px;
+  background-color: HSLA(211, 9%, 49%, 1);
+  color: white;
+  font-size: 12px;
 }
