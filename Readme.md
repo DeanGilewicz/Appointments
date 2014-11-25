@@ -1,3 +1,18 @@
-## Yo, I'm a Readme
+## Appointments
 
-You should probably update me so people looking at your code have an idea what it is being used for :)
+A small CRUD app in angular that also allows users to search and sort through their appointments.
+
+How to use it
+* Clone my repo
+* Run npm install
+* Run bower install
+
+Libraries
+
+* Angular
+* Restangular
+* jQuery
+
+Author
+
+* Dean Gilewicz
